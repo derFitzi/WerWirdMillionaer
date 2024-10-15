@@ -3,7 +3,7 @@ package org.example.werwirdmillionaer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class MenueController {
     @FXML
     private Label welcomeText;
 
