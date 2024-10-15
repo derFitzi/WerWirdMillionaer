@@ -3,16 +3,23 @@ package org.example.werwirdmillionaer;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class MainMenuController {
+public class MainMenuController implements Initializable {
 
     @FXML
     private Button playButton;
+    @FXML
+    public VBox vbox;
     public void startGame() {
         System.out.println("Game started!");
         try {
@@ -44,6 +51,16 @@ public class MainMenuController {
             Platform.exit();
 
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image hintergrundMainMenue = new Image(getClass().getResourceAsStream("HintergrundMainMenue.png"));
+        double width = 1920;
+        double height = 1090;
+        BackgroundImage backgroundImage = new BackgroundImage(hintergrundMainMenue, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, new BackgroundSize(width, height, false, false, true, true));
+        vbox.setBackground(new Background(backgroundImage));
+    }
+
 
 
 }

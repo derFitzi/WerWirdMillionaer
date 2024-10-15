@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.werwirdmillionaer.MainMenuController">
-<VBox alignment="CENTER" layoutX="200.0" layoutY="100.0" spacing="20.0">
+<VBox fx:id="vbox" alignment="CENTER" prefHeight="1080.0" prefWidth="1920.0" spacing="20.0">
   <Button fx:id="playButton" onAction="#startGame" text="Spielen" />
   <Button fx:id="settingsButton" text="Einstellungen" />
   <Button fx:id="exitButton" onAction="#exitGame" text="Beenden" />
