@@ -28,6 +28,7 @@ public class GameController implements Initializable {
     private int currentQuestionIndex = 0;
     private int prize = 0;
     private int difficultyLevel = 1;
+    private Connection connection;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -38,13 +39,9 @@ public class GameController implements Initializable {
             loadNextQuestion();
         } else {
             System.out.println("Database connection failed.");
-            questionLabel.setText("Database connection failed.");
-            option1Button.setDisable(true);
-            option2Button.setDisable(true);
-            option3Button.setDisable(true);
-            option4Button.setDisable(true);
+            setDatabaseConnectionFailed();
         }
-    } //Skill Issue!!!
+    }
 
     private void connectToDatabase() {
         try {
@@ -68,34 +65,50 @@ public class GameController implements Initializable {
             ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                String question = resultSet.getString("Question");
-                String option1 = resultSet.getString("AnswerOption1");
-                String option2 = resultSet.getString("AnswerOption2");
-                String option3 = resultSet.getString("AnswerOption3");
-                String option4 = resultSet.getString("AnswerOption4");
-
-                questionLabel.setText(question);
-                option1Button.setText(option1);
-                option2Button.setText(option2);
-                option3Button.setText(option3);
-                option4Button.setText(option4);
-
-                // Print to console for verification
-                System.out.println("Question: " + question);
-                System.out.println("1: " + option1);
-                System.out.println("2: " + option2);
-                System.out.println("3: " + option3);
-                System.out.println("4: " + option4);
+                setQuestionAndOptions(resultSet);
             } else {
-                questionLabel.setText("No more questions available.");
-                option1Button.setDisable(true);
-                option2Button.setDisable(true);
-                option3Button.setDisable(true);
-                option4Button.setDisable(true);
+                setNoMoreQuestions();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private void setQuestionAndOptions(ResultSet resultSet) throws SQLException {
+        String question = resultSet.getString("Question");
+        String option1 = resultSet.getString("AnswerOption1");
+        String option2 = resultSet.getString("AnswerOption2");
+        String option3 = resultSet.getString("AnswerOption3");
+        String option4 = resultSet.getString("AnswerOption4");
+
+        questionLabel.setText(question);
+        option1Button.setText(option1);
+        option2Button.setText(option2);
+        option3Button.setText(option3);
+        option4Button.setText(option4);
+
+        // Print to console for verification
+        System.out.println("Question: " + question);
+        System.out.println("1: " + option1);
+        System.out.println("2: " + option2);
+        System.out.println("3: " + option3);
+        System.out.println("4: " + option4);
+    }
+
+    private void setNoMoreQuestions() {
+        questionLabel.setText("No more questions available.");
+        option1Button.setDisable(true);
+        option2Button.setDisable(true);
+        option3Button.setDisable(true);
+        option4Button.setDisable(true);
+    }
+
+    private void setDatabaseConnectionFailed() {
+        questionLabel.setText("Database connection failed.");
+        option1Button.setDisable(true);
+        option2Button.setDisable(true);
+        option3Button.setDisable(true);
+        option4Button.setDisable(true);
     }
 
     @FXML
@@ -133,22 +146,30 @@ public class GameController implements Initializable {
             if (resultSet.next()) {
                 int correctAnswer = resultSet.getInt("Solution");
                 if (selectedOption == correctAnswer) {
-                    prize += 1000; // Increment prize
-                    currentQuestionIndex++;
-                    if (currentQuestionIndex % 4 == 0) {
-                        difficultyLevel++;
-                    }
-                    loadNextQuestion();
+                    handleCorrectAnswer();
                 } else {
-                    questionLabel.setText("Incorrect answer. Game over.");
-                    option1Button.setDisable(true);
-                    option2Button.setDisable(true);
-                    option3Button.setDisable(true);
-                    option4Button.setDisable(true);
+                    handleIncorrectAnswer();
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private void handleCorrectAnswer() {
+        prize += 1000; // Increment prize
+        currentQuestionIndex++;
+        if (currentQuestionIndex % 4 == 0) {
+            difficultyLevel++;
+        }
+        loadNextQuestion();
+    }
+
+    private void handleIncorrectAnswer() {
+        questionLabel.setText("Incorrect answer. Game over.");
+        option1Button.setDisable(true);
+        option2Button.setDisable(true);
+        option3Button.setDisable(true);
+        option4Button.setDisable(true);
     }
 }
