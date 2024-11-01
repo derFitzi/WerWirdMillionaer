@@ -2,11 +2,32 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.werwirdmillionaer.MainMenuController">
-<VBox fx:id="vbox" alignment="CENTER" prefHeight="1080.0" prefWidth="1920.0" spacing="20.0">
-  <Button fx:id="playButton" onAction="#startGame" text="Spielen" />
-  <Button fx:id="settingsButton" text="Einstellungen" />
-  <Button fx:id="exitButton" onAction="#exitGame" text="Beenden" />
-</VBox>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.werwirdmillionaer.MainMenuController">
+   <Pane fx:id="pane" prefHeight="1080.0" prefWidth="1920.0">
+      <children>
+     <Button fx:id="playButton" graphicTextGap="15.0" layoutX="835.0" layoutY="374.0" minHeight="50.0" minWidth="250.0" onAction="#startGame" text="Spielen">
+            <font>
+               <Font name="ArtifaktElement-Medium" size="18.0" />
+            </font>
+         </Button>
+      <Button fx:id="settingsButton" graphicTextGap="15.0" layoutX="835.0" layoutY="515.0" minHeight="50.0" minWidth="250.0" text="Einstellungen">
+            <font>
+               <Font name="ArtifaktElement-Medium" size="18.0" />
+            </font>
+         </Button>
+     <Button fx:id="exitButton" graphicTextGap="15.0" layoutX="835.0" layoutY="644.0" minHeight="50.0" minWidth="250.0" onAction="#exitGame" text="Beenden">
+            <font>
+               <Font name="ArtifaktElement-Medium" size="18.0" />
+            </font>
+         </Button>
+       <Label fx:id="highscoreLabel" alignment="CENTER" layoutX="1353.0" layoutY="204.0" prefHeight="43.0" prefWidth="340.0" textFill="WHITE">
+           <font>
+               <Font name="ArtifaktElement-Black" size="30.0" />
+           </font>
+       </Label>
+
+      </children>
+   </Pane>
 </AnchorPane>

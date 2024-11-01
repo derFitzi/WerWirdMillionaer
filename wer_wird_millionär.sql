@@ -4,6 +4,14 @@ CREATE DATABASE IF NOT EXISTS who_wants_to_be_a_millionaire;
 -- Switch to the new database
 USE who_wants_to_be_a_millionaire;
 
+-- Erstelle die Tabelle highscore mit nur der Spalte stage
+CREATE TABLE highscore (
+    stage INT NOT NULL
+);
+
+-- Füge einen Eintrag hinzu, bei dem stage 0 ist
+INSERT INTO highscore (stage) VALUES (0);
+
 -- Create the table for the questions
 CREATE TABLE IF NOT EXISTS Questions (
     Id INT PRIMARY KEY AUTO_INCREMENT,
