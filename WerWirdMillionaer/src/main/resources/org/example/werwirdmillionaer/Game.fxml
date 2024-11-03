@@ -28,7 +28,7 @@
                 <Font name="ArtifaktElement-Black" size="24.0" />
             </font>
         </Label>
-      <Label fx:id="prizeLabel" layoutX="1595.0" layoutY="153.0" prefHeight="53.0" prefWidth="221.0">
+      <Label fx:id="prizeLabel" layoutX="1465.0" layoutY="153.0" prefHeight="53.0" prefWidth="351.0">
          <font>
             <Font name="ArtifaktElement-Black" size="24.0" />
          </font>

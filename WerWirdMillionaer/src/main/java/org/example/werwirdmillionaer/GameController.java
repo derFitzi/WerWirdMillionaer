@@ -36,7 +36,7 @@ public class GameController implements Initializable {
 
     private int currentQuestionIndex = 0;
     private int[] prize  = {0,100,200,300,400,500,1000,2000,4000,8000,16000,32000,64000,125000,500000,1000000};
-    int prizeIndex=0;
+    int prizeIndex = 0;
     private int difficultyLevel = 1;
 
     private Connection connection;
@@ -45,6 +45,7 @@ public class GameController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         System.out.println("Initializing GameController...");
         mainMenuButton.setVisible(false);
+        System.out.println(difficultyLevel);
         connectToDatabase();
         if (connection != null) {
             System.out.println("Database connection established.");
@@ -57,7 +58,7 @@ public class GameController implements Initializable {
             option3Button.setDisable(true);
             option4Button.setDisable(true);
         }
-    } //Skill Issue!!!
+    }
 
     private void connectToDatabase() {
         try {
@@ -89,13 +90,12 @@ public class GameController implements Initializable {
                 currentQuestionIndex = resultSet.getInt("Id");
 
                 questionLabel.setText(question);
-                prizeLabel.setText(prize[prizeIndex] +" €");
+                prizeLabel.setText("Current Win: "+prize[prizeIndex] +" €");
                 option1Button.setText(option1);
                 option2Button.setText(option2);
                 option3Button.setText(option3);
                 option4Button.setText(option4);
 
-                // Print to console for verification
                 System.out.println("Question: " + question);
                 System.out.println("1: " + option1);
                 System.out.println("2: " + option2);
@@ -148,9 +148,24 @@ public class GameController implements Initializable {
                 int correctAnswer = resultSet.getInt("Solution");
                 if (selectedOption == correctAnswer) {
                     prizeIndex ++; // Increment prize
-                    difficultyLevel++;
-                    loadNextQuestion();
-                } else {
+                    if(prizeIndex==15)
+                    {
+                        questionLabel.setText("Congratulations! You're a Millionaire! You've conquered the million-dollar question! \uD83C\uDF89");
+                        prizeLabel.setText(prize[prizeIndex] +" €");
+                        mainMenuButton.setVisible(true);
+                        option1Button.setDisable(true);
+                        option2Button.setDisable(true);
+                        option3Button.setDisable(true);
+                        option4Button.setDisable(true);
+                        checkHighscore();
+                    }
+                    else
+                    {
+                        difficultyLevel++;
+                        loadNextQuestion();
+                    }
+                } else
+                {
                     questionLabel.setText("Incorrect answer. Game over.");
                     mainMenuButton.setVisible(true);
                     option1Button.setDisable(true);
@@ -195,10 +210,10 @@ public class GameController implements Initializable {
                 int currentStage = resultSet.getInt("stage");
 
                 // Wenn currentQuestionIndex größer ist, aktualisiere den Eintrag
-                if (currentQuestionIndex > currentStage) {
+                if (prizeIndex > currentStage) {
                     String updateQuery = "UPDATE highscore SET stage = ?";
                     PreparedStatement updateStatement = connection.prepareStatement(updateQuery);
-                    updateStatement.setInt(1, difficultyLevel-1);
+                    updateStatement.setInt(1, prizeIndex);
                     updateStatement.executeUpdate();
 
                     System.out.println("Highscore updated to stage: " + currentQuestionIndex);

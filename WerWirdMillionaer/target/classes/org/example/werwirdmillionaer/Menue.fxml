@@ -7,17 +7,12 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.werwirdmillionaer.MainMenuController">
    <Pane fx:id="pane" prefHeight="1080.0" prefWidth="1920.0">
       <children>
-     <Button fx:id="playButton" graphicTextGap="15.0" layoutX="835.0" layoutY="374.0" minHeight="50.0" minWidth="250.0" onAction="#startGame" text="Spielen">
+     <Button fx:id="playButton" graphicTextGap="15.0" layoutX="835.0" layoutY="400.0" minHeight="50.0" minWidth="250.0" onAction="#startGame" text="Spielen">
             <font>
                <Font name="ArtifaktElement-Medium" size="18.0" />
             </font>
          </Button>
-      <Button fx:id="settingsButton" graphicTextGap="15.0" layoutX="835.0" layoutY="515.0" minHeight="50.0" minWidth="250.0" text="Einstellungen">
-            <font>
-               <Font name="ArtifaktElement-Medium" size="18.0" />
-            </font>
-         </Button>
-     <Button fx:id="exitButton" graphicTextGap="15.0" layoutX="835.0" layoutY="644.0" minHeight="50.0" minWidth="250.0" onAction="#exitGame" text="Beenden">
+     <Button fx:id="exitButton" graphicTextGap="15.0" layoutX="835.0" layoutY="550.0" minHeight="50.0" minWidth="250.0" onAction="#exitGame" text="Beenden">
             <font>
                <Font name="ArtifaktElement-Medium" size="18.0" />
             </font>

@@ -26,9 +26,6 @@ public class MainMenuController implements Initializable {
     private Label highscoreLabel;
 
     @FXML
-    private Button settingsButton;
-
-    @FXML
     private Button exitButton;
 
     @FXML
@@ -56,15 +53,6 @@ public class MainMenuController implements Initializable {
         }
     }
 
-    public void showHighscore() {
-        System.out.println("Highscore shown!");
-        // Füge die Logik zum Anzeigen der Highscores hinzu
-    }
-
-    public void showSettings() {
-        System.out.println("Settings shown!");
-        // Füge die Logik für Einstellungen hinzu
-    }
 
     public void exitGame() {
         System.out.println("Game exited!");
@@ -117,10 +105,12 @@ public class MainMenuController implements Initializable {
             playImageView.setFitHeight(64); // Setze die Höhe auf 64 Pixel
             playButton.setGraphic(playImageView);
 
+            /* Settings wurden entfernt
             ImageView settingsImageView = new ImageView(new Image(getClass().getResourceAsStream("/org/example/werwirdmillionaer/settings.png")));
             settingsImageView.setFitWidth(64);
             settingsImageView.setFitHeight(64);
             settingsButton.setGraphic(settingsImageView);
+             */
 
             ImageView exitImageView = new ImageView(new Image(getClass().getResourceAsStream("/org/example/werwirdmillionaer/logout.png")));
             exitImageView.setFitWidth(64);
