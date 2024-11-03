@@ -4,20 +4,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.werwirdmillionaer.MainMenuController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.werwirdmillionaer.MainMenuController">
    <Pane fx:id="pane" prefHeight="1080.0" prefWidth="1920.0">
       <children>
-     <Button fx:id="playButton" graphicTextGap="15.0" layoutX="835.0" layoutY="400.0" minHeight="50.0" minWidth="250.0" onAction="#startGame" text="Spielen">
+     <Button fx:id="playButton" graphicTextGap="15.0" layoutX="716.0" layoutY="740.0" minHeight="50.0" minWidth="250.0" onAction="#startGame" prefHeight="68.0" prefWidth="489.0" style="-fx-background-color: black; -fx-background-radius: 25;" text="Spielen" textAlignment="CENTER" textFill="WHITE">
             <font>
-               <Font name="ArtifaktElement-Medium" size="18.0" />
+               <Font size="24.0" />
             </font>
          </Button>
-     <Button fx:id="exitButton" graphicTextGap="15.0" layoutX="835.0" layoutY="550.0" minHeight="50.0" minWidth="250.0" onAction="#exitGame" text="Beenden">
+     <Button fx:id="exitButton" graphicTextGap="15.0" layoutX="716.0" layoutY="850.0" minHeight="50.0" minWidth="250.0" onAction="#exitGame" prefHeight="68.0" prefWidth="489.0" style="-fx-background-color: black; -fx-background-radius: 25; -fx-border-radius: 25;" text="Beenden" textAlignment="CENTER" textFill="WHITE">
             <font>
-               <Font name="ArtifaktElement-Medium" size="18.0" />
+               <Font size="24.0" />
             </font>
          </Button>
-       <Label fx:id="highscoreLabel" alignment="CENTER" layoutX="1353.0" layoutY="204.0" prefHeight="43.0" prefWidth="340.0" textFill="WHITE">
+       <Label fx:id="highscoreLabel" alignment="CENTER" layoutX="1504.0" layoutY="111.0" prefHeight="54.0" prefWidth="340.0" style="-fx-background-color: black; -fx-border-radius: 15;" textFill="WHITE">
            <font>
                <Font name="ArtifaktElement-Black" size="30.0" />
            </font>

@@ -4,39 +4,47 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.werwirdmillionaer.GameController">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.werwirdmillionaer.GameController">
     <children>
-        <Button layoutX="82.0" layoutY="226.0" mnemonicParsing="false" text="Menü" />
-        <Button fx:id="option1Button" layoutX="535.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleOption1" prefHeight="75.0" prefWidth="372.0" text="Giesela">
+        <Button layoutX="74.0" layoutY="60.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="61.0" prefWidth="150.0" style="-fx-background-color: black; -fx-background-radius: 15; -fx-border-radius: 15;" text="Menü" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Arial" size="12.0" />
+            <Font size="30.0" />
          </font></Button>
-        <Button fx:id="option2Button" layoutX="935.0" layoutY="586.0" mnemonicParsing="false" onAction="#handleOption2" prefHeight="75.0" prefWidth="372.0" text="Claudia">
-        <font>
-            <Font name="Arial" size="12.0" />
-        </font></Button>
-        <Button fx:id="option3Button" layoutX="937.0" layoutY="484.0" mnemonicParsing="false" onAction="#handleOption3" prefHeight="75.0" prefWidth="372.0" text="Birgit">
+        <Button fx:id="option1Button" layoutX="238.0" layoutY="690.0" mnemonicParsing="false" onAction="#handleOption1" prefHeight="75.0" prefWidth="372.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Giesela" textFill="WHITE">
             <font>
-                <Font name="Arial" size="12.0" />
-            </font></Button>
-        <Button fx:id="option4Button" layoutX="535.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleOption4" prefHeight="75.0" prefWidth="372.0" text="Dora">
+                <Font name="Arial" size="32.0" />
+            </font>
+        </Button>
+        <Button fx:id="option2Button" layoutX="983.0" layoutY="870.0" mnemonicParsing="false" onAction="#handleOption2" prefHeight="75.0" prefWidth="372.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Claudia" textFill="WHITE">
             <font>
-                <Font name="Arial" size="12.0" />
-            </font></Button>
-        <Label fx:id="questionLabel" alignment="CENTER" layoutX="138.0" layoutY="375.0" prefHeight="45.0" prefWidth="1567.0" text="Wie heißt Julians Mutter" textAlignment="CENTER">
+                <Font name="Arial" size="32.0" />
+            </font>
+        </Button>
+        <Button fx:id="option3Button" layoutX="971.0" layoutY="690.0" mnemonicParsing="false" onAction="#handleOption3" prefHeight="75.0" prefWidth="372.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Birgit" textFill="WHITE">
+            <font>
+                <Font name="Arial" size="32.0" />
+            </font>
+        </Button>
+        <Button fx:id="option4Button" layoutX="238.0" layoutY="870.0" mnemonicParsing="false" onAction="#handleOption4" prefHeight="75.0" prefWidth="465.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Dora" textFill="#fcfcfc">
+            <font>
+                <Font name="Arial" size="32.0" />
+            </font>
+        </Button>
+        <Label fx:id="questionLabel" alignment="CENTER" layoutX="138.0" layoutY="518.0" prefHeight="45.0" prefWidth="1567.0" text="Wie heißt Julians Mutter" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="ArtifaktElement-Black" size="24.0" />
             </font>
         </Label>
-      <Label fx:id="prizeLabel" layoutX="1465.0" layoutY="153.0" prefHeight="53.0" prefWidth="351.0">
+      <Label fx:id="prizeLabel" layoutX="1426.0" layoutY="365.0" prefHeight="53.0" prefWidth="351.0" textFill="WHITE">
          <font>
             <Font name="ArtifaktElement-Black" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="mainMenuButton" layoutX="815.0" layoutY="266.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="53.0" prefWidth="213.0" text="Return to Main Menu">
+      <Button fx:id="mainMenuButton" layoutX="782.0" layoutY="249.0" mnemonicParsing="false" onAction="#returnToMainMenu" prefHeight="75.0" prefWidth="301.0" style="-fx-background-color: black; -fx-border-radius: 15; -fx-background-radius: 25;" text="Return to Main Menu" textFill="WHITE">
          <font>
-            <Font name="ArtifaktElement-Medium" size="13.0" />
+            <Font size="16.0" />
          </font>
       </Button>
+
     </children>
 </Pane>

@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -33,6 +35,8 @@ public class GameController implements Initializable {
     private Button option4Button;
     @FXML
     private Button mainMenuButton;
+    @FXML
+    private Pane pane;
 
     private int currentQuestionIndex = 0;
     private int[] prize  = {0,100,200,300,400,500,1000,2000,4000,8000,16000,32000,64000,125000,500000,1000000};
@@ -58,6 +62,13 @@ public class GameController implements Initializable {
             option3Button.setDisable(true);
             option4Button.setDisable(true);
         }
+
+        // Hintergrundbild setzen
+        Image hintergrundGame = new Image(getClass().getResourceAsStream("/org/example/werwirdmillionaer/GameHintergrund.png"));
+        BackgroundImage backgroundImage = new BackgroundImage(hintergrundGame,
+                BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+                new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.DEFAULT.getHeight(), false, true, false, false));
+        pane.setBackground(new Background(backgroundImage));
     }
 
     private void connectToDatabase() {
