@@ -4,6 +4,9 @@ CREATE DATABASE IF NOT EXISTS who_wants_to_be_a_millionaire;
 -- Switch to the new database
 USE who_wants_to_be_a_millionaire;
 
+-- Set the character set for the connection
+SET NAMES 'utf8mb4';
+
 -- Erstelle die Tabelle highscore mit nur der Spalte stage
 CREATE TABLE highscore (
     stage INT NOT NULL
