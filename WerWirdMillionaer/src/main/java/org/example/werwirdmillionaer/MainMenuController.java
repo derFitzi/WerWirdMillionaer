@@ -38,6 +38,7 @@ public class MainMenuController implements Initializable {
 
     public void startGame() {
         System.out.println("Game started!");
+
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/werwirdmillionaer/Game.fxml"));
             Parent gameRoot = loader.load();
