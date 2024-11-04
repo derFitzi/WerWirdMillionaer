@@ -10,22 +10,22 @@
          <font>
             <Font size="30.0" />
          </font></Button>
-        <Button fx:id="option1Button" layoutX="238.0" layoutY="690.0" mnemonicParsing="false" onAction="#handleOption1" prefHeight="75.0" prefWidth="372.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Giesela" textFill="WHITE">
+        <Button fx:id="option1Button" layoutX="331.0" layoutY="700.0" mnemonicParsing="false" onAction="#handleOption1" prefHeight="75.0" prefWidth="494.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0 0 0 10;" text="Giesela" textAlignment="LEFT" textFill="WHITE">
             <font>
                 <Font name="Arial" size="32.0" />
             </font>
         </Button>
-        <Button fx:id="option2Button" layoutX="983.0" layoutY="870.0" mnemonicParsing="false" onAction="#handleOption2" prefHeight="75.0" prefWidth="372.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Claudia" textFill="WHITE">
+        <Button fx:id="option2Button" layoutX="1093.0" layoutY="880.0" mnemonicParsing="false" onAction="#handleOption2" prefHeight="75.0" prefWidth="494.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0 0 0 10;" text="Claudia" textAlignment="LEFT" textFill="WHITE">
             <font>
                 <Font name="Arial" size="32.0" />
             </font>
         </Button>
-        <Button fx:id="option3Button" layoutX="971.0" layoutY="690.0" mnemonicParsing="false" onAction="#handleOption3" prefHeight="75.0" prefWidth="372.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Birgit" textFill="WHITE">
+        <Button fx:id="option3Button" layoutX="1093.0" layoutY="700.0" mnemonicParsing="false" onAction="#handleOption3" prefHeight="75.0" prefWidth="494.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0 0 0 10;" text="Birgit" textAlignment="LEFT" textFill="WHITE">
             <font>
                 <Font name="Arial" size="32.0" />
             </font>
         </Button>
-        <Button fx:id="option4Button" layoutX="238.0" layoutY="870.0" mnemonicParsing="false" onAction="#handleOption4" prefHeight="75.0" prefWidth="465.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="Dora" textFill="#fcfcfc">
+        <Button fx:id="option4Button" layoutX="331.0" layoutY="880.0" mnemonicParsing="false" onAction="#handleOption4" prefHeight="75.0" prefWidth="494.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-padding: 0 0 0 10;" text="Dora" textAlignment="LEFT" textFill="#fcfcfc">
             <font>
                 <Font name="Arial" size="32.0" />
             </font>

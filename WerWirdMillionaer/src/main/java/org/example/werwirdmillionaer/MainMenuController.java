@@ -99,23 +99,7 @@ public class MainMenuController implements Initializable {
                     new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, true, true));
             pane.setBackground(new Background(backgroundImage));
 
-            // Bilder für die Buttons setzen und Größe anpassen
-            ImageView playImageView = new ImageView(new Image(getClass().getResourceAsStream("/org/example/werwirdmillionaer/play.png")));
-            playImageView.setFitWidth(64);  // Setze die Breite auf 64 Pixel
-            playImageView.setFitHeight(64); // Setze die Höhe auf 64 Pixel
-            playButton.setGraphic(playImageView);
 
-            /* Settings wurden entfernt
-            ImageView settingsImageView = new ImageView(new Image(getClass().getResourceAsStream("/org/example/werwirdmillionaer/settings.png")));
-            settingsImageView.setFitWidth(64);
-            settingsImageView.setFitHeight(64);
-            settingsButton.setGraphic(settingsImageView);
-             */
-
-            ImageView exitImageView = new ImageView(new Image(getClass().getResourceAsStream("/org/example/werwirdmillionaer/logout.png")));
-            exitImageView.setFitWidth(64);
-            exitImageView.setFitHeight(64);
-            exitButton.setGraphic(exitImageView);
 
             getHighscore();
         }
